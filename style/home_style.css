@@ -1,0 +1,154 @@
+/* Reset default */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: sans-serif;
+}
+
+.hero {
+  position: relative;
+  background: url('/images/udinus-picture.jpeg') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-left: 200px;
+  padding-top: 80px;
+  color: white;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 90%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5), transparent);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.headline {
+  font-size: 3.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.desc {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #e0e0e0;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: #4b7bcd;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: #0f3b60;
+}
+
+@media (max-width: 1024px) {
+    .hero {
+        padding-left: 90px;
+    }
+}
+
+/* About Section Style Start */
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px;
+  background-color: #fdfdfd; 
+}
+
+.about-content {
+  display: flex;
+  /* align-items: center; */
+  gap: 40px;
+  max-width: 1200px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.img-about-container {
+  flex: 1 1 400px;
+  max-width: 500px;
+}
+
+.img-about {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 1024px) {
+  .img-about {
+    height: 630px; 
+  }
+
+  .about-content {
+    padding: 0 20px 0 20px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .img-about {
+    height: auto;
+  }
+
+  .about-content {
+    padding: 0 0 0 0;
+  }
+}
+
+.text-about-container {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+.text-about-container h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+  color: #4b7bcd; 
+}
+
+.about-frist-paragh {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.5;
+  text-align: justify;
+  margin-bottom: 10px;
+}
+

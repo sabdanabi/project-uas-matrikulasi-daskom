@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="/style/gallery_style.css">
+    <link rel="stylesheet" href="/style/navbar_style.css">
+</head>
+<body>
+    <!-- Navbar Section Start -->
+     <header class="navbar">
+        <div class="logo">
+            <img src="/images/udinus-logo.png" alt="Logo" class="logo-img">
+            <span class="logo-text">Universitas Dian Nuswantoro</span>
+        </div>
+        <nav class="nav-links">
+            <a href="home_page.html">Home</a>
+            <a href="articel_page_test.html">Artikel</a>
+            <a href="profile_page.html">Profil</a>
+            <a href="gallery_page.html">Gallery</a>
+            <a href="form_page.html">Buku Tamu</a>
+        </nav>
+    </header>
+    <!-- Navbar Section End -->
+
+    <main class="gallery_countainer">
+        <h2 class="section-title">Gallery Universitas Dian Nuswantoro</h2>
+        <!-- Tabs -->
+        <div class="tabs">
+            <div class="tab active">All</div>
+            <div class="tab">Animated</div>
+            <div class="tab">App</div>
+            <div class="tab">Creative</div>
+            <div class="tab">Finance</div>
+            <div class="tab">Health</div>
+            <div class="tab">SaaS</div>
+            <div class="tab">Stores</div>
+            <div class="tab">Finance</div>
+            <div class="tab">Health</div>
+            <div class="tab">SaaS</div>
+            <div class="tab">Stores</div>
+        </div>
+
+        <!-- Gallery -->
+        <div class="gallery">
+            <div class="card">
+            <img src="https://source.unsplash.com/random/300x200?tech" alt="Gallery 1">
+            <div class="card-title">Project One</div>
+            </div>
+            <div class="card">
+            <img src="https://source.unsplash.com/random/300x200?creative" alt="Gallery 2">
+            <div class="card-title">Project Two</div>
+            </div>
+            <div class="card">
+            <img src="https://source.unsplash.com/random/300x200?design" alt="Gallery 3">
+            <div class="card-title">Project Three</div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal" id="imageModal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img class="modal-content" id="modalImage">
+        </div>
+    </main>
+
+  <script>
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+
+    document.querySelectorAll('.card img').forEach(img => {
+      img.addEventListener('click', function () {
+        modal.style.display = "flex";
+        modalImg.src = this.src;
+      });
+    });
+
+    function closeModal() {
+      modal.style.display = "none";
+    }
+  </script>
+</body>
+</html>
