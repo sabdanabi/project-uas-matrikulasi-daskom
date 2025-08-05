@@ -8,12 +8,16 @@ body {
   font-family: sans-serif;
   background-color: #145286;
   color: #333;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .form-container {
-  padding: 40px 20px;
+  padding: 395px 20px;
   display: flex;
+  height: 100%;
   justify-content: center;
+  align-items: center;
 }
 
 .form-card {
@@ -22,13 +26,12 @@ body {
   display: flex;
   width: 100%;
   max-width: 960px;
+  height: 75vh;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .left-panel {
-  /* background-color: #0f362c; */
-  color: #333;
   flex: 1;
   padding: 40px 20px;
   display: flex;
@@ -45,17 +48,25 @@ body {
 .right-panel {
   flex: 2;
   padding: 40px 30px;
+  /* overflow-y: auto; */
 }
 
 .right-panel h3 {
-  margin-bottom: 20px;
+  /* margin-bottom: 10px; */
   font-size: 22px;
+}
+
+.title-section {
+  margin-bottom: 10px;
 }
 
 form {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  max-height: calc(70vh - 100px);
+  overflow-y: auto;
+  padding-right: 10px;
 }
 
 label {
@@ -77,6 +88,7 @@ input, select, textarea {
   display: flex;
   gap: 20px;
   margin-top: 5px;
+  flex-wrap: wrap;
 }
 
 .button-group {
@@ -89,42 +101,38 @@ button {
   padding: 10px 20px;
   border: none;
   border-radius: 8px;
-  background-color: #0f362c;
+  background-color: #145286;
   color: white;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #145c46;
+  background-color: #1576cb;
 }
 
-/* Responsive */
+/* Responsive tetap sama */
 @media (max-width: 1024px) {
   .form-card {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    height: 70vh;
   }
 
   .left-panel,
   .right-panel {
-    width: 100%;
-    padding: 30px;
-    text-align: center;
+    padding: 20px;
+    text-align: left;
   }
 
   form {
-    align-items: center;
-  }
-
-  label {
-    width: 100%;
+    align-items: stretch;
+    padding-right: 10px;
   }
 
   .radio-group, .checkbox-group {
-    justify-content: center;
+    justify-content: left;
   }
 
   .button-group {
-    justify-content: center;
+    justify-content: left;
   }
 }
