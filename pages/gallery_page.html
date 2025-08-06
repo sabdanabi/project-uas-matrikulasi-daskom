@@ -26,20 +26,35 @@
 
     <main class="gallery_countainer">
         <h2 class="section-title">Gallery Universitas Dian Nuswantoro</h2>
+
+         <div class="carousel">
+    <button class="arrow left" onclick="prevSlide()">&#10094;</button>
+    <div class="slides">
+      <img src="/images/images_carousel_gallery/carousel1-img.png" class="slide active" />
+      <img src="/images/images_carousel_gallery/carousel2-img.png" class="slide" />
+      <img src="/images/images_carousel_gallery/carousel3-img.png" class="slide" />
+      <img src="/images/images_carousel_gallery/carousel4-img.png" class="slide" />
+      <img src="/images/images_carousel_gallery/carousel5_img.png" class="slide" />
+    </div>
+    
+    <button class="arrow right" onclick="nextSlide()">&#10095;</button>
+  </div>
+
         <!-- Tabs -->
         <div class="tabs">
-            <div class="tab active">All</div>
-            <div class="tab">Animated</div>
-            <div class="tab">App</div>
-            <div class="tab">Creative</div>
-            <div class="tab">Finance</div>
-            <div class="tab">Health</div>
-            <div class="tab">SaaS</div>
-            <div class="tab">Stores</div>
-            <div class="tab">Finance</div>
-            <div class="tab">Health</div>
-            <div class="tab">SaaS</div>
+          <div class="tab active">All</div>
+          <div class="tab">Mathematics</div>
+          <div class="tab">Science</div>
+          <div class="tab">History</div>
+          <div class="tab">Languages</div>
+          <div class="tab">Arts</div>
+          <div class="tab">Technology</div>
+          <div class="tab">Literature</div>
+          <div class="tab">Civics</div>
+          <div class="tab">Biology</div>
+          <div class="tab">Physics</div>
         </div>
+
 
         <!-- Gallery -->
         <div class="gallery">
@@ -95,6 +110,9 @@
   <script>
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImage");
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+  
 
     document.querySelectorAll('.card img').forEach(img => {
       img.addEventListener('click', function () {
@@ -106,6 +124,25 @@
     function closeModal() {
       modal.style.display = "none";
     }
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove('active');
+    if (i === index) {
+      slide.classList.add('active');
+    }
+  });
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+}
   </script>
 </body>
 </html>

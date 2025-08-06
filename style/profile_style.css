@@ -28,6 +28,7 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   overflow: hidden;
+  animation: fadeSlideIn 1s ease-out both;
 }
 
 .card-img img {
@@ -92,4 +93,15 @@ body {
 .social-button img {
   width: 30px;
   height: 30px;
+}
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

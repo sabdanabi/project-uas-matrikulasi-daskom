@@ -110,6 +110,8 @@ button:hover {
   background-color: #1576cb;
 }
 
+
+
 /* Responsive tetap sama */
 @media (max-width: 1024px) {
   .form-card {
